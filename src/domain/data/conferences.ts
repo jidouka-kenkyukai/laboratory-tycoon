@@ -1,0 +1,55 @@
+import type { ConferenceDef } from '../types';
+
+export const CONFERENCES: ConferenceDef[] = [
+  {
+    id: 'local-workshop',
+    name: '学内ワークショップ',
+    scale: 'local',
+    icon: '🪧',
+    description: '学内の小規模会。練習感覚で発表できる。',
+    cost: 0,
+    daysSpent: 1,
+    baseReputation: 2,
+    rpGain: 4,
+  },
+  {
+    id: 'jp-society',
+    name: '国内学会 (秋季大会)',
+    scale: 'national',
+    icon: '🎤',
+    description: '分野の国内コミュニティが集まる年次大会。ポスター/口頭発表が可能。',
+    cost: 200,
+    daysSpent: 3,
+    baseReputation: 8,
+    rpGain: 10,
+    requiresPresentation: 1,
+  },
+  {
+    id: 'asia-symposium',
+    name: 'アジア地域シンポジウム',
+    scale: 'international',
+    icon: '🌏',
+    description: '英語セッション中心の中規模国際会議。',
+    cost: 800,
+    daysSpent: 4,
+    baseReputation: 18,
+    rpGain: 18,
+    requiresEnglish: 2,
+    requiresPresentation: 2,
+  },
+  {
+    id: 'gordon',
+    name: 'ゴードン会議 (招待中心)',
+    scale: 'international',
+    icon: '🏔️',
+    description: '招待制の少人数集中討議型国際会議。コネクションが命。',
+    cost: 1500,
+    daysSpent: 5,
+    baseReputation: 35,
+    rpGain: 30,
+    requiresEnglish: 4,
+    requiresPresentation: 3,
+  },
+];
+
+export const CONFERENCE_BY_ID = new Map(CONFERENCES.map((c) => [c.id, c]));
